@@ -1,6 +1,7 @@
-.articleContainer {
+.article {
     display: flex;
     align-items: center;
+    position: relative;
     
     .img-box {
       position: relative;
@@ -10,15 +11,28 @@
 }
 
 .articleTextCard {
-    display: flex;
-    align-items: space-between;
-    justify-content:center;
-    gap: 16px;
+    transition: filter .3s linear;
+}
+
+.articleTextCardBlurred {
+    composes: articleTextCard;
+    filter: blur(5px);
 }
 
 .articleBenefits {
     display: flex;
-    margin-left: 32px;
+    position: absolute;
+    // margin-left: 32px;
+    width: 100%;
+    left: calc(100% + 32px);
     gap: 16px;
     flex-direction: column;
+    transition: all .6s linear;
+}
+
+.articleBenefitsHidden {
+    composes: articleBenefits;
+    opacity: 0;
+    left: calc(100% - 32px);
+    // margin-left: 0;
 }

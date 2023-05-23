@@ -7,4 +7,10 @@
     border-radius: 12px;
     padding: 25px 32px;
     width: 227px;
+    transition: filter .3s linear;
+}
+
+.iconTextCardBlurred {
+    composes: iconTextCard;
+    filter: blur(5px);
 }

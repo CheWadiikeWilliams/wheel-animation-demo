@@ -1,5 +1,5 @@
 import {
-    Paragraph,
+    Span,
     Image
 } from "components/atoms";
 import styles from "./wheelItem.module.scss";
@@ -32,10 +32,9 @@ const WheelItem = ({
                     alt={iconAlt}
                     width={30}
                     height={30}
-                    priority
                 />
             </div>
-            <Paragraph className={styles.wheelItemTitle}>{title}</Paragraph>
+            <Span className={styles.wheelItemTitle}>{title}</Span>
         </div>
     )
 }

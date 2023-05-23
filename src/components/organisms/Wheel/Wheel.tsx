@@ -1,41 +1,31 @@
-"use client";
-import React, { useState, useEffect } from "react";
+import { useContext } from "react";
+import { observer } from "mobx-react-lite";
+import { AppContext } from 'App';
 import { WheelItem } from "components/molecules";
 import styles from "./wheel.module.scss";
-import type { ProductFeature } from "types";
 import { useStyles } from "./wheel.hooks";
+import type { GenericObject } from "types";
 
-type WheelOptions = {
-    items: ProductFeature[],
-    [key:string]: any
-}
-
-const Wheel = ({
-    items,
-    ...props
-}:WheelOptions ) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const { itemStyles } = useStyles({items, currentIndex});
-
-    // const handleItemClick = () => {
-    //     setCurrentIndex(2);
-    // }
+const Wheel = (props:GenericObject) => {
+    const appStore = useContext(AppContext);
+    const { product:{features}, selectedIndex } = appStore;
+    const { featureStyles } = useStyles({features, selectedIndex});
 
     // ##### add bg colour change to styles hook ######
     const getClassName = (index:number) => {
-        return currentIndex === index ? `selected` : `selected`
+        return selectedIndex === index ? `selected` : `selected`
     }
 
     return (
         <div {...props} className={styles.wheel}>
-            {items.map((item, index) => {
+            {features.map((feature, index) => {
                 return (
                     <WheelItem
-                        key={item.id}
-                        {...item}
-                        style={itemStyles[item.id]}
+                        key={feature.id}
+                        {...feature}
+                        style={featureStyles[feature.id]}
                         className={getClassName(index)}
-                        onClick={() => setCurrentIndex(index)}
+                        onClick={() => appStore.setSelectedFeature(feature.id)}
                     />
                 )
             })}
@@ -43,4 +33,4 @@ const Wheel = ({
     )
 }
 
-export default Wheel;
+export default observer(Wheel);

@@ -1,4 +1,5 @@
 export const PRODUCT_DATA = {
+    id: "product-0",
     features: [
         {
             id: "feature-0",

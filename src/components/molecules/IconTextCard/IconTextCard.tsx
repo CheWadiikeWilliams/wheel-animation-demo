@@ -18,13 +18,12 @@ const IconTextCard = ({
     ...props
 }:IconTextCardOptions) => {
     return (
-        <div {...props} className={styles.iconTextCard}>
+        <div className={styles.iconTextCard} {...props}>
             <Image
                 src={icon}
                 alt={iconAlt}
                 width={30}
                 height={30}
-                priority
             />
             <Paragraph>{text}</Paragraph>
         </div>

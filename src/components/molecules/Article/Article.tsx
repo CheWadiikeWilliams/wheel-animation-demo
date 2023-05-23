@@ -6,6 +6,7 @@ type ArticleOptions = {
     iconAlt: string,
     description: string,
     benefits: string[],
+    isSelected: boolean,
     [key:string]: any
 }
 
@@ -14,17 +15,21 @@ const Article = ({
     iconAlt,
     description,
     benefits,
+    isSelected,
     ...props
 }:ArticleOptions) => {
+    const textCardStyle = isSelected ? styles.articleTextCard : styles.articleTextCardBlurred;
+    const benefitsStyle = isSelected ? styles.articleBenefits : styles.articleBenefitsHidden;
     return (
-        <article {...props} className={styles.articleContainer}>
-            <IconTextCard
-                className={styles.articleTextCard}
-                icon={icon}
-                iconAlt={iconAlt}
-                text={description}
-            />
-            <List items={benefits} className={styles.articleBenefits} />
+        <article {...props} className={styles.article}>
+            <div className={textCardStyle}>
+                <IconTextCard
+                    icon={icon}
+                    iconAlt={iconAlt}
+                    text={description}
+                />
+            </div>
+            <List items={benefits} className={benefitsStyle} />
         </article>
     )
 }

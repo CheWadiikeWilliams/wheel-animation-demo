@@ -1,25 +1,30 @@
+import { useContext } from "react";
+import { observer } from "mobx-react-lite";
 import { Article } from "components/molecules";
+import { AppContext } from 'App';
 import styles from "./infoPanel.module.scss";
-import type { ProductFeature } from "types";
-
-type InfoPanelOptions = {
-    items: ProductFeature[],
-    [key:string]: any
-}
+import type { GenericObject } from "types";
 
 const InfoPanel = ({
-    items,
     ...props
-}:InfoPanelOptions ) => {
+}:GenericObject ) => {
+    const appStore = useContext(AppContext);
+    const { product:{features}, selectedFeature } = appStore;
     return (
         <div className={styles.infoPanelContainer}>
-            {items.map((item, index) => {
+            {features.map((feature) => {
                 return (
-                    <Article {...item.article} key={item.id} id={item.id} />
+                    <Article
+                        {...props}
+                        {...feature.article}
+                        key={feature.id}
+                        id={feature.id}
+                        isSelected = {selectedFeature === feature.id}
+                    />
                 )
             })}
         </div>
     )
 }
 
-export default InfoPanel;
+export default observer(InfoPanel);
