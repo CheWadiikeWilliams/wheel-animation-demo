@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import ProductFeatures from "./components/templates/ProductFeatures";
-import { ProductStore, IProduct } from "store/product/productStore";
+import { ProductStore } from "store/product/productStore";
 import { AppStore } from 'store/appStore';
 import { PRODUCT_DATA } from "./data";
 import './App.scss';

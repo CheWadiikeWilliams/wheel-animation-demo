@@ -1,10 +1,10 @@
 
 function toDegrees (angle:number) {
-    return angle * (180 / Math.PI);
+    return angle * (180 / Math.PI)
 }
 
 function toRadians (angle:number) {
-    return angle * (Math.PI / 180);
+    return angle * (Math.PI / 180)
 }
 
 function getCoordsFromAngle(
@@ -14,8 +14,8 @@ function getCoordsFromAngle(
     x: number,
     y: number
 } {
-    const y = Math.sin(toRadians(angle)) * radius;
-    const x = Math.cos(toRadians(angle)) * radius;
+    const x = Math.cos(toRadians(angle)) * radius
+    const y = Math.sin(toRadians(angle)) * radius
     return {x, y}
 };
 

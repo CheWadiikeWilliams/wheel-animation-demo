@@ -13,7 +13,7 @@ const volatile = () => ({
     selected: false
 });
 
-const views = () => ({});
+const views = (self:GenericObject) => ({});
 
 const actions = (self:GenericObject) => ({
     setSelected(isSelected:boolean) {

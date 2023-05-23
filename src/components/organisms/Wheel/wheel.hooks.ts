@@ -1,4 +1,4 @@
-import { TransformToXY, TransformAlongCircle } from "utils";
+import { TransformToXY } from "utils";
 import type { IFeature } from "store/product/featureStore";
 import type { GenericObject } from "types";
 
@@ -7,34 +7,23 @@ type UseStylesParams = {
     selectedIndex: number | undefined
 }
 
-export const useStyles = ({features, selectedIndex}:UseStylesParams) => {
-    const totalFeatures = features.length;
-    const radius = 105;
-    
+export const useFeatureStyles = ({features, selectedIndex}:UseStylesParams) => {
+    const totalFeatures = features.length
+    const angleOffset = Math.round(360 / totalFeatures)
+    const radius = 105
+    const featuresOnLeftHemisphere:string[] = [] 
     const featureStyles:GenericObject = {};
-    console.log('selectedIndex: ',selectedIndex)
+
     features.forEach((feature, index) => {
-        const rotation = Math.round(360 / totalFeatures * (index + (selectedIndex ?? 0)));
-        featureStyles[feature.id] = TransformToXY(rotation, radius);
-        console.log(`   ${feature.id}: ${rotation}`)
+        const rotation = (angleOffset * (index - (selectedIndex ?? 0))) % 360;
+        featureStyles[feature.id] = TransformToXY(rotation - 90, radius);
+        if (rotation > 180 || (rotation < 0 && rotation > -180)) {
+            featuresOnLeftHemisphere.push(feature.id);
+        }
     })
 
     return {
-        featureStyles
+        featureStyles,
+        featuresOnLeftHemisphere
     }
 }
-
-// export const useStyles = ({features, selectedIndex}:UseStylesParams) => {
-//     const itemCount = features.length;
-//     const itemStyles:{
-//         [key:string]: any
-//     } = {};
-//     features.forEach((item, index) => {
-//         const rotation = Math.round(360 / itemCount * (index + selectedIndex));
-//         itemStyles[item.id] = TransformAlongCircle({rotation, radius: 105});
-//     })
-
-//     return {
-//         itemStyles
-//     }
-// }

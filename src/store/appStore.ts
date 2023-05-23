@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { AppContext } from "App";
 import { types } from "mobx-state-tree";
 import { ProductStore } from "store/product/productStore";
 import { IFeature } from "store/product/featureStore";
@@ -30,8 +28,3 @@ export const AppStore = types
     .volatile(volatile)
     .views(views)
     .actions(actions);
-
-// export const useAppStore = () => {
-//     const { appStore } = useContext(AppContext);
-//     return appStore;
-// };

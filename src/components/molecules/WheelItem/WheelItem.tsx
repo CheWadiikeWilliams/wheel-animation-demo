@@ -21,11 +21,15 @@ const WheelItem = ({
     icon,
     iconAlt,
     style,
+    isSelected,
+    isOnLeftHemisphere,
     ...props
 }:WheelItemOptions) => {
+    const wheelItemIconStyle = isSelected ? styles.wheelItemIconSelected : styles.wheelItemIcon
+    const wheelItemTitleStyle = isOnLeftHemisphere ? styles.wheelItemTitleLeft : styles.wheelItemTitle
     return (
         <div {...props} className={styles.wheelItem} style={style}>
-            <div className={styles.wheelItemIcon}>
+            <div className={wheelItemIconStyle}>
                 <Image
                     className={styles.icon}
                     src={icon}
@@ -34,7 +38,7 @@ const WheelItem = ({
                     height={30}
                 />
             </div>
-            <Span className={styles.wheelItemTitle}>{title}</Span>
+            <Span className={wheelItemTitleStyle}>{title}</Span>
         </div>
     )
 }
