@@ -28,6 +28,39 @@
   color: #61dafb;
 }
 
+html,
+body,
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 67.5%;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  font-size: 1.2rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;;
+}
+
+p {
+  margin: 0;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

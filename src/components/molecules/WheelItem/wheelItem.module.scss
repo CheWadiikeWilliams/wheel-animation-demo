@@ -1,0 +1,63 @@
+.wheelItem {
+  position: absolute;
+  cursor: pointer;
+  transition: transform .5s linear;
+  // animation: circle 6s linear infinite;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: 100%;
+    height: 16px;
+    background-color: #f3f3f3;
+    bottom: 0;
+    opacity: 0;
+    transition-property: bottom, opacity;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+  }
+  
+  &:hover::before {
+    bottom: -5px;
+    opacity: 1;
+  }
+}
+
+.wheelItemIcon {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  background-color: #fa7f1f;
+  border-radius: 50%;
+  bottom: 0;
+  transition: bottom .3s linear;
+
+  &:hover {
+    bottom: 5px;
+  }
+}
+
+.wheelItemTitle {
+  position: absolute;
+  width: 100px;
+  margin-top: -50%;
+  transform: translate(106px, -50%);
+}
+
+@keyframes circle{
+  0%{
+    transform:rotate(0deg)
+              translate(105px)
+              rotate(0deg);
+  
+  }
+  100%{
+    transform:rotate(360deg)
+              translate(105px)
+              rotate(-360deg);
+  }
+}

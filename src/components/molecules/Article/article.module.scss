@@ -1,0 +1,24 @@
+.articleContainer {
+    display: flex;
+    align-items: center;
+    
+    .img-box {
+      position: relative;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+}
+
+.articleTextCard {
+    display: flex;
+    align-items: space-between;
+    justify-content:center;
+    gap: 16px;
+}
+
+.articleBenefits {
+    display: flex;
+    margin-left: 32px;
+    gap: 16px;
+    flex-direction: column;
+}
