@@ -1,0 +1,242 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders learn react link 1`] = `
+<div>
+  <div
+    class="productFeaturesContainer"
+  >
+    <section
+      class="wheelContainer"
+    >
+      <div
+        class="wheel"
+      >
+        <div
+          article="[object Object]"
+          class="wheelItem"
+          style="transform: translate(6.429395695523604e-15px, -105px);"
+        >
+          <div
+            class="wheelItemIconSelected"
+          >
+            <img
+              alt="Icon image of a camera"
+              class="icon"
+              height="30"
+              src="/icon-camera.svg"
+              width="30"
+            />
+          </div>
+          <span
+            class="wheelItemTitle"
+          >
+            High Resolution Camera
+          </span>
+        </div>
+        <div
+          article="[object Object]"
+          class="wheelItem"
+          style="transform: translate(105px, 0px);"
+        >
+          <div
+            class="wheelItemIconSelected"
+          >
+            <img
+              alt="Icon image of a muted speaker"
+              class="icon"
+              height="30"
+              src="/icon-audio-off.svg"
+              width="30"
+            />
+          </div>
+          <span
+            class="wheelItemTitle"
+          >
+            Noise Cancelling Technology
+          </span>
+        </div>
+        <div
+          article="[object Object]"
+          class="wheelItem"
+          style="transform: translate(6.429395695523604e-15px, 105px);"
+        >
+          <div
+            class="wheelItemIconSelected"
+          >
+            <img
+              alt="Icon image of a water drop"
+              class="icon"
+              height="30"
+              src="/icon-water-drop.svg"
+              width="30"
+            />
+          </div>
+          <span
+            class="wheelItemTitle"
+          >
+            Waterproof Design
+          </span>
+        </div>
+        <div
+          article="[object Object]"
+          class="wheelItem"
+          style="transform: translate(-105px, 1.2858791391047208e-14px);"
+        >
+          <div
+            class="wheelItemIconSelected"
+          >
+            <img
+              alt="Icon image of a target"
+              class="icon"
+              height="30"
+              src="/icon-target.svg"
+              width="30"
+            />
+          </div>
+          <span
+            class="wheelItemTitleLeft"
+          >
+            GPS Navigation System
+          </span>
+        </div>
+      </div>
+    </section>
+    <section
+      class="infoPanelContainer"
+    >
+      <div
+        class="infoPanelContainer"
+      >
+        <article
+          class="article"
+          id="feature-0"
+        >
+          <div
+            class="articleTextCardBlurred"
+          >
+            <div
+              class="iconTextCard"
+            >
+              <img
+                alt="Icon image of a camera shutter"
+                height="30"
+                src="/icon-shutter.svg"
+                width="30"
+              />
+              <p>
+                Capture stunning, detailed photos and videos
+              </p>
+            </div>
+          </div>
+          <ul
+            class="articleBenefitsHidden"
+          >
+            <li>
+              Preserve memories
+            </li>
+            <li>
+              Create lasting impressions
+            </li>
+          </ul>
+        </article>
+        <article
+          class="article"
+          id="feature-1"
+        >
+          <div
+            class="articleTextCardBlurred"
+          >
+            <div
+              class="iconTextCard"
+            >
+              <img
+                alt="Icon image of a speaker"
+                height="30"
+                src="/icon-audio-on.svg"
+                width="30"
+              />
+              <p>
+                Immerse yourself in pure, uninterrupted sound
+              </p>
+            </div>
+          </div>
+          <ul
+            class="articleBenefitsHidden"
+          >
+            <li>
+              Block out background noise
+            </li>
+            <li>
+              Enhance your productivity
+            </li>
+          </ul>
+        </article>
+        <article
+          class="article"
+          id="feature-2"
+        >
+          <div
+            class="articleTextCardBlurred"
+          >
+            <div
+              class="iconTextCard"
+            >
+              <img
+                alt="Icon image of a mobile handset"
+                height="30"
+                src="/icon-handset.svg"
+                width="30"
+              />
+              <p>
+                Use the device worry-free in various environments
+              </p>
+            </div>
+          </div>
+          <ul
+            class="articleBenefitsHidden"
+          >
+            <li>
+              Withstand water exposure
+            </li>
+            <li>
+              Providing peace of mind
+            </li>
+          </ul>
+        </article>
+        <article
+          class="article"
+          id="feature-3"
+        >
+          <div
+            class="articleTextCardBlurred"
+          >
+            <div
+              class="iconTextCard"
+            >
+              <img
+                alt="Icon image of a map route"
+                height="30"
+                src="/icon-route.svg"
+                width="30"
+              />
+              <p>
+                Easily find your way to any destination
+              </p>
+            </div>
+          </div>
+          <ul
+            class="articleBenefitsHidden"
+          >
+            <li>
+              Seamlessly navigate
+            </li>
+            <li>
+              Save time, reduce stress
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </div>
+</div>
+`;

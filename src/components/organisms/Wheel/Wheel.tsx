@@ -10,7 +10,6 @@ const Wheel = (props:GenericObject) => {
     const appStore = useContext(AppContext);
     const { product:{features}, selectedIndex } = appStore;
     const { featureStyles, featuresOnLeftHemisphere } = useFeatureStyles({features, selectedIndex});
-    console.log(featuresOnLeftHemisphere);
 
     return (
         <div {...props} className={styles.wheel}>
